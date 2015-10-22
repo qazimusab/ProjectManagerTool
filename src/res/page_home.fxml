@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.*?>
+<GridPane alignment="center" hgap="10" prefHeight="2213.0" prefWidth="1725.0" vgap="10"
+          xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.HomeController">
+   <columnConstraints>
+      <ColumnConstraints/>
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints/>
+      <RowConstraints/>
+   </rowConstraints>
+   <ScrollPane prefHeight="2202.0" prefWidth="1725.0" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED">
+      <HBox prefHeight="2202.0" prefWidth="1425.0">
+         <VBox fx:id="projectNameVbox" alignment="TOP_LEFT" prefHeight="2202.0" prefWidth="575.0"
+               HBox.hgrow="SOMETIMES"/>
+         <VBox fx:id="projectManagerVbox" alignment="TOP_CENTER" prefHeight="2202.0" prefWidth="575.0"
+               HBox.hgrow="SOMETIMES"/>
+         <VBox fx:id="viewButtonsVbox" alignment="TOP_RIGHT" prefHeight="2202.0" prefWidth="575.0"
+               HBox.hgrow="SOMETIMES"/>
+      </HBox>
+   </ScrollPane>
+</GridPane>
