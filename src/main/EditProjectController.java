@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -14,7 +15,7 @@ import java.io.IOException;
 
 public class EditProjectController extends BaseController implements Initializable {
 
-    @FXML public TextField projectNameTextField;
+    @FXML public Label projectNameTextField;
     @FXML public TextField projectManagerTextField;
     @FXML public TextField projectNumberOfTeamMembersTextField;
     @FXML public TextField projectCurrentStatusTextField;
@@ -43,6 +44,7 @@ public class EditProjectController extends BaseController implements Initializab
             root = FXMLLoader.load(getClass().getResource("../res/page_home.fxml"));
             Scene scene = new Scene(root);
             stage.setScene(scene);
+            stage.centerOnScreen();
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
@@ -69,6 +71,7 @@ public class EditProjectController extends BaseController implements Initializab
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../res/page_home.fxml"));
             primaryStage.setTitle("PMT 3000");
             primaryStage.setScene(new Scene(loader.load()));
+            primaryStage.centerOnScreen();
             primaryStage.show();
         } catch (IOException e) {
             e.printStackTrace();

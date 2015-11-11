@@ -12,7 +12,7 @@
     </Label>
     <HBox prefHeight="36.0" prefWidth="600.0">
         <Label alignment="CENTER" contentDisplay="TEXT_ONLY" prefHeight="36.0" prefWidth="230.0" text="Name:" textAlignment="CENTER" />
-        <TextField fx:id="projectNameTextField" prefHeight="36.0" prefWidth="360.0" />
+        <Label fx:id="projectNameTextField" prefHeight="36.0" prefWidth="360.0" />
     </HBox>
     <HBox prefHeight="36.0" prefWidth="600.0">
         <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="36.0" prefWidth="230.0" text="Project Manager:" textAlignment="CENTER" />

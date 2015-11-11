@@ -75,6 +75,7 @@ public class HomeController extends BaseController implements Initializable{
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("../res/page_add_project.fxml"));
                 primaryStage.setTitle("PMT 3000");
                 primaryStage.setScene(new Scene(loader.load()));
+                primaryStage.centerOnScreen();
                 primaryStage.show();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -122,6 +123,7 @@ public class HomeController extends BaseController implements Initializable{
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("../res/page_edit_project.fxml"));
                 primaryStage.setTitle("PMT 3000");
                 primaryStage.setScene(new Scene(loader.load()));
+                primaryStage.centerOnScreen();
                 primaryStage.show();
                 loader.<EditProjectController>getController().populateWithProject(softwareProject);
             } catch (IOException e) {

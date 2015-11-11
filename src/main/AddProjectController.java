@@ -42,6 +42,7 @@ public class AddProjectController extends BaseController implements Initializabl
             root = FXMLLoader.load(getClass().getResource("../res/page_home.fxml"));
             Scene scene = new Scene(root);
             stage.setScene(scene);
+            stage.centerOnScreen();
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
