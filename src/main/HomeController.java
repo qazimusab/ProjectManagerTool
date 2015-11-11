@@ -110,5 +110,7 @@ public class HomeController implements Initializable{
         projectNameVbox.getChildren().add(separator);
         projectManagerVbox.getChildren().add(separator2);
         viewButtonsVbox.getChildren().add(separator3);
+
+
     }
 }
