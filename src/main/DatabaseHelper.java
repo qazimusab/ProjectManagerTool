@@ -1,9 +1,6 @@
 package main;
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.ArrayList;
 
 /**
@@ -13,6 +10,7 @@ public class DatabaseHelper {
 
     private ArrayList<SoftwareProject> allSoftwareProjects;
 
+    @SuppressWarnings("unused")
     public SoftwareProject getSoftwareProject(String softwareProjectName) throws IOException {
         File database = new File("database.txt");
         if(!database.exists()) {
@@ -27,9 +25,9 @@ public class DatabaseHelper {
         return null;
     }
 
-    public int getIndexOfProject(SoftwareProject softwareProject){
+    public int getIndexOfProject(String projectName){
         for(int i = 0; i < allSoftwareProjects.size(); i++){
-            if(softwareProject.projectName.equals(allSoftwareProjects.get(i).projectName)){
+            if(projectName.equals(allSoftwareProjects.get(i).projectName)){
                 return i;
             }
         }
@@ -47,19 +45,15 @@ public class DatabaseHelper {
 
     public void saveOrUpdateSoftwareProject(SoftwareProject softwareProject) throws IOException {
         initializeProjectsList();
-        if(getIndexOfProject(softwareProject) != -1) {
-            int indexOfCounterPart = getIndexOfProject(softwareProject);
+        if(getIndexOfProject(softwareProject.projectName) != -1) {
+            int indexOfCounterPart = getIndexOfProject(softwareProject.projectName);
             allSoftwareProjects.remove(indexOfCounterPart);
             allSoftwareProjects.add(indexOfCounterPart, softwareProject);
         }
         else {
             allSoftwareProjects.add(softwareProject);
         }
-        PrintWriter writer = new PrintWriter("database.txt", "UTF-8");
-        for(SoftwareProject project: allSoftwareProjects){
-            writer.print(project.toString());
-        }
-        writer.close();
+        writeArraylistToDatabase();
     }
 
     public void initializeProjectsList() throws IOException {
@@ -97,22 +91,42 @@ public class DatabaseHelper {
         }
     }
 
-    public String readFile(String filename) throws IOException {
+    private String readFile(String filename) throws IOException {
         String content = null;
         File file = new File(filename); //for ex foo.txt
-        FileReader reader = null;
-        try {
-            reader = new FileReader(file);
-            char[] chars = new char[(int) file.length()];
-            reader.read(chars);
-            content = new String(chars);
-            reader.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if(reader !=null){reader.close();}
+        if(file.exists()) {
+            FileReader reader = null;
+            try {
+                reader = new FileReader(file);
+                char[] chars = new char[(int) file.length()];
+                reader.read(chars);
+                content = new String(chars);
+                reader.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                if (reader != null) {
+                    reader.close();
+                }
+            }
+            return content;
         }
-        return content;
+        else {
+            return "";
+        }
     }
 
+    public void deleteProject(String projectName) throws IOException {
+        initializeProjectsList();
+        allSoftwareProjects.remove(getIndexOfProject(projectName));
+        writeArraylistToDatabase();
+    }
+
+    private void writeArraylistToDatabase() throws FileNotFoundException, UnsupportedEncodingException {
+        PrintWriter writer = new PrintWriter("database.txt", "UTF-8");
+        for(SoftwareProject project: allSoftwareProjects){
+            writer.print(project.toString());
+        }
+        writer.close();
+    }
 }

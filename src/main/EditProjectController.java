@@ -23,6 +23,7 @@ public class EditProjectController extends BaseController implements Initializab
     @FXML public TextField projectExpectedDateTextField;
     @FXML public TextField projectActualDateTextField;
     @FXML public Button addProjectButton;
+    @FXML public Button deleteProjectButton;
 
     public SoftwareProject createSoftwareProjectFromFields()
     {
@@ -57,6 +58,21 @@ public class EditProjectController extends BaseController implements Initializab
         projectStartDateTextField.setText(softwareProject.startDate);
         projectExpectedDateTextField.setText(softwareProject.expectedDate);
         projectActualDateTextField.setText(softwareProject.actualDate);
+    }
+
+    @FXML
+    public void deleteProjectButtonAction(ActionEvent actionEvent) throws IOException {
+        String nameOfProjectToDelete = createSoftwareProjectFromFields().projectName;
+        databaseHelper.deleteProject(nameOfProjectToDelete);
+        try {
+            Stage primaryStage = (Stage) deleteProjectButton.getScene().getWindow();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../res/page_home.fxml"));
+            primaryStage.setTitle("PMT 3000");
+            primaryStage.setScene(new Scene(loader.load()));
+            primaryStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
 
