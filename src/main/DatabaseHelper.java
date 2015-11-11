@@ -11,7 +11,7 @@ import java.util.ArrayList;
  */
 public class DatabaseHelper {
 
-    ArrayList<SoftwareProject> allSoftwareProjects;
+    private ArrayList<SoftwareProject> allSoftwareProjects;
 
     public SoftwareProject getSoftwareProject(String softwareProjectName) throws IOException {
         File database = new File("database.txt");
