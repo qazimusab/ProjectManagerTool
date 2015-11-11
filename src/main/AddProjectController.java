@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class ProjectViewController extends BaseController implements Initializable {
+public class AddProjectController extends BaseController implements Initializable {
 
     @FXML public TextField projectNameTextField;
     @FXML public TextField projectManagerTextField;
@@ -34,7 +34,7 @@ public class ProjectViewController extends BaseController implements Initializab
     @FXML
     public void addProjectButtonAction(ActionEvent event) throws IOException
     {
-        databaseHelper.saveSoftwareProject(createSoftwareProjectFromFields());
+        databaseHelper.saveOrUpdateSoftwareProject(createSoftwareProjectFromFields());
         try {
             Stage stage;
             Parent root;

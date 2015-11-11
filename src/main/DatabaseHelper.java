@@ -27,6 +27,15 @@ public class DatabaseHelper {
         return null;
     }
 
+    public int getIndexOfProject(SoftwareProject softwareProject){
+        for(int i = 0; i < allSoftwareProjects.size(); i++){
+            if(softwareProject.projectName.equals(allSoftwareProjects.get(i).projectName)){
+                return i;
+            }
+        }
+        return -1;
+    }
+
     public ArrayList<SoftwareProject> getAllProjects() throws IOException {
         File database = new File("database.txt");
         if(!database.exists()) {
@@ -36,11 +45,20 @@ public class DatabaseHelper {
         return allSoftwareProjects;
     }
 
-    public void saveSoftwareProject(SoftwareProject softwareProject) throws IOException {
-        String file = readFile("database.txt");
+    public void saveOrUpdateSoftwareProject(SoftwareProject softwareProject) throws IOException {
+        initializeProjectsList();
+        if(getIndexOfProject(softwareProject) != -1) {
+            int indexOfCounterPart = getIndexOfProject(softwareProject);
+            allSoftwareProjects.remove(indexOfCounterPart);
+            allSoftwareProjects.add(indexOfCounterPart, softwareProject);
+        }
+        else {
+            allSoftwareProjects.add(softwareProject);
+        }
         PrintWriter writer = new PrintWriter("database.txt", "UTF-8");
-        writer.print(file);
-        writer.print(softwareProject.toString());
+        for(SoftwareProject project: allSoftwareProjects){
+            writer.print(project.toString());
+        }
         writer.close();
     }
 
