@@ -69,18 +69,7 @@ public class HomeController extends BaseController implements Initializable{
         viewProjectContainer.getChildren().addAll(viewProject);
         viewProjectContainer.setAlignment(Pos.CENTER_RIGHT);
         viewProjectContainer.setPadding(new Insets(0, 20, 0, 0));
-        viewProject.setOnAction(event -> {
-            try {
-                Stage primaryStage = (Stage) viewProject.getScene().getWindow();
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("../res/page_add_project.fxml"));
-                primaryStage.setTitle("PMT 3000");
-                primaryStage.setScene(new Scene(loader.load()));
-                primaryStage.centerOnScreen();
-                primaryStage.show();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
+        viewProject.setOnAction(event -> changeScene("../res/page_add_project.fxml",viewProject));
 
         projectNameVbox.getChildren().add(projectNameContainer);
         projectManagerVbox.getChildren().add(projectManagerContainer);

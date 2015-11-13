@@ -2,13 +2,9 @@ package main;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -35,18 +31,7 @@ public class AddProjectController extends BaseController implements Initializabl
     public void addProjectButtonAction(ActionEvent event) throws IOException
     {
         databaseHelper.saveOrUpdateSoftwareProject(createSoftwareProjectFromFields());
-        try {
-            Stage stage;
-            Parent root;
-            stage=(Stage) addProjectButton.getScene().getWindow();
-            root = FXMLLoader.load(getClass().getResource("../res/page_home.fxml"));
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.centerOnScreen();
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        changeScene("../res/page_home.fxml",addProjectButton);
     }
 
     public void populateWithProject(SoftwareProject softwareProject){
