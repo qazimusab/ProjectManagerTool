@@ -76,7 +76,7 @@ public class SoftwareProject
                 .append(expectedDate == null ? "" : "expectedDate" + expectedDate)
                 .append("@")
                 .append(actualDate == null ? "" : "actualDate" + actualDate)
-                .append("^");
+                .append("%");
         return stringBuilder.toString();
     }
 

@@ -59,7 +59,7 @@ public class DatabaseHelper {
     public void initializeProjectsList() throws IOException {
         allSoftwareProjects = new ArrayList<>();
         String textInDb = readFile("database.txt");
-        String [] allProjects = textInDb.split("^");
+        String [] allProjects = textInDb.split("%");
         for (String project : allProjects) {
             String[] projectDetails = project.split("@");
             SoftwareProject softwareProject = null;
