@@ -13,9 +13,15 @@ public class EditProjectController extends BaseController implements Initializab
 
     @FXML public Label projectNameTextField;
     @FXML public TextField projectManagerTextField;
-    @FXML public TextField projectNumberOfTeamMembersTextField;
+    @FXML public TextField projectDescriptionTextField;
+    @FXML public TextField projectTeamMemberNameTextField;
+    @FXML public TextField projectRiskAndStatusTextField;
     @FXML public TextField projectCurrentStatusTextField;
-    @FXML public TextField projectHoursTextField;
+    @FXML public TextField projectRequirementsHoursTextField;
+    @FXML public TextField projectDesigningHoursTextField;
+    @FXML public TextField projectCodingHoursTextField;
+    @FXML public TextField projectTestingHoursTextField;
+    @FXML public TextField projectManagementHoursTextField;
     @FXML public TextField projectStartDateTextField;
     @FXML public TextField projectExpectedDateTextField;
     @FXML public TextField projectActualDateTextField;
@@ -24,9 +30,13 @@ public class EditProjectController extends BaseController implements Initializab
 
     public SoftwareProject createSoftwareProjectFromFields()
     {
-        return new SoftwareProject(projectNameTextField.getText(),projectManagerTextField.getText(),projectNumberOfTeamMembersTextField.getText(),
-                projectCurrentStatusTextField.getText(),projectHoursTextField.getText(),projectStartDateTextField.getText(),projectExpectedDateTextField.getText(),
-                projectActualDateTextField.getText());
+        return new SoftwareProject(projectNameTextField.getText(), projectManagerTextField.getText(),
+                projectDescriptionTextField.getText(), projectTeamMemberNameTextField.getText(),
+                projectRiskAndStatusTextField.getText(), projectCurrentStatusTextField.getText(),
+                projectRequirementsHoursTextField.getText(), projectDesigningHoursTextField.getText(),
+                projectCodingHoursTextField.getText(), projectTestingHoursTextField.getText(),
+                projectManagementHoursTextField.getText(), projectStartDateTextField.getText(),
+                projectExpectedDateTextField.getText(), projectActualDateTextField.getText());
     }
 
     @FXML
@@ -39,9 +49,15 @@ public class EditProjectController extends BaseController implements Initializab
     public void populateWithProject(SoftwareProject softwareProject){
         projectNameTextField.setText(softwareProject.projectName);
         projectManagerTextField.setText(softwareProject.projectManager);
-        projectNumberOfTeamMembersTextField.setText(softwareProject.numberOfTeamMembers);
-        projectCurrentStatusTextField.setText(softwareProject.currentStatus);
-        projectHoursTextField.setText(softwareProject.hoursWorked);
+        projectDescriptionTextField.setText(softwareProject.projectDescription);
+        projectTeamMemberNameTextField.setText(softwareProject.projectTeamMemberNames);
+        projectRiskAndStatusTextField.setText(softwareProject.projectRisk);
+        projectCurrentStatusTextField.setText(softwareProject.projectCurrentStatus);
+        projectRequirementsHoursTextField.setText(softwareProject.projectRequirementHours);
+        projectDesigningHoursTextField.setText(softwareProject.projectDesignHours);
+        projectCodingHoursTextField.setText(softwareProject.projectCodingHours);
+        projectTestingHoursTextField.setText(softwareProject.projectTestingHours);
+        projectManagementHoursTextField.setText(softwareProject.projectManagementHours);
         projectStartDateTextField.setText(softwareProject.startDate);
         projectExpectedDateTextField.setText(softwareProject.expectedDate);
         projectActualDateTextField.setText(softwareProject.actualDate);

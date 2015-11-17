@@ -59,21 +59,39 @@ public class DatabaseHelper {
     public void initializeProjectsList() throws IOException {
         allSoftwareProjects = new ArrayList<>();
         String textInDb = readFile("database.txt");
-        String [] allProjects = textInDb.split(";");
+        String [] allProjects = textInDb.split("^");
         for (String project : allProjects) {
-            String[] projectDetails = project.split(",");
+            String[] projectDetails = project.split("@");
             SoftwareProject softwareProject = null;
             if (projectDetails.length > 1) {
                 softwareProject = new SoftwareProject(projectDetails[0], projectDetails[1]);
                 for (int j = 2; j < projectDetails.length; j++) {
-                    if (projectDetails[j].contains("hoursWorked")) {
-                        softwareProject.setHoursWorked(projectDetails[j].substring(11));
+                    if (projectDetails[j].contains("projectDescription")) {
+                        softwareProject.setProjectDescription(projectDetails[j].substring(18));
                     }
-                    if (projectDetails[j].contains("numberOfTeamMembers")) {
-                        softwareProject.setNumberOfTeamMembers(projectDetails[j].substring(19));
+                    if (projectDetails[j].contains("projectTeamMemberNames")) {
+                        softwareProject.setProjectTeamMemberNames(projectDetails[j].substring(22));
                     }
-                    if (projectDetails[j].contains("currentStatus")) {
-                        softwareProject.setCurrentStatus(projectDetails[j].substring(13));
+                    if (projectDetails[j].contains("projectRisk")) {
+                        softwareProject.setProjectRisk(projectDetails[j].substring(11));
+                    }
+                    if (projectDetails[j].contains("projectCurrentStatus")) {
+                        softwareProject.setProjectCurrentStatus(projectDetails[j].substring(20));
+                    }
+                    if (projectDetails[j].contains("projectRequirementHours")) {
+                        softwareProject.setProjectRequirementHours(projectDetails[j].substring(23));
+                    }
+                    if (projectDetails[j].contains("projectDesignHours")) {
+                        softwareProject.setProjectDesignHours(projectDetails[j].substring(18));
+                    }
+                    if (projectDetails[j].contains("projectCodingHours")) {
+                        softwareProject.setProjectCodingHours(projectDetails[j].substring(18));
+                    }
+                    if (projectDetails[j].contains("projectTestingHours")) {
+                        softwareProject.setProjectTestingHours(projectDetails[j].substring(19));
+                    }
+                    if (projectDetails[j].contains("projectManagementHours")) {
+                        softwareProject.setProjectManagementHours(projectDetails[j].substring(22));
                     }
                     if (projectDetails[j].contains("startDate")) {
                         softwareProject.setStartDate(projectDetails[j].substring(9));
