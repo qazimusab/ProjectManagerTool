@@ -3,9 +3,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="546.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.EditProjectController">
 
-    <Label alignment="CENTER" prefHeight="42.0" prefWidth="600.0" text="Project View" textAlignment="CENTER">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.EditProjectController">
+    <Label alignment="CENTER" prefHeight="42.0" prefWidth="600.00" text="Project View" textAlignment="CENTER">
         <font>
             <Font size="24.0" />
         </font>
@@ -26,13 +26,13 @@
         <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="36.0" prefWidth="230.0" text="Team Member(s) names:" textAlignment="CENTER" />
         <TextField fx:id="projectTeamMemberNameTextField" alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="360.0" />
     </HBox>
-    <HBox prefHeight="36" prefWidth="600">
-        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="36" prefWidth="230" text="Risk - Risk Status:" textAlignment="CENTER"/>
-        <TextField fx:id="projectRiskAndStatusTextField" alignment="CENTER_LEFT" prefHeight="36" prefWidth="360"/>
+    <HBox prefHeight="120" prefWidth="600">
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="36" prefWidth="230" text="Risk - Risk Status:" textAlignment="CENTER" />
+            <TextArea fx:id="projectRiskAndStatusTextArea" wrapText="true" prefHeight="120" prefWidth="360" />
     </HBox>
-    <HBox prefHeight="36" prefWidth="600">
+    <HBox prefHeight="120" prefWidth="600">
         <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="36" prefWidth="230" text="Functional/Non-Functional Requirements" textAlignment="CENTER"/>
-        <TextField fx:id="projectRequirementsTextField" alignment="CENTER_LEFT" prefHeight="36" prefWidth="360"/>
+        <TextArea fx:id="projectRequirementsTextArea" wrapText="true" prefHeight="120" prefWidth="360"/>
     </HBox>
     <HBox prefHeight="36.0" prefWidth="600.0">
         <Label alignment="CENTER" prefHeight="36.0" prefWidth="230.0" text="Current Status:" textAlignment="CENTER" />

@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
@@ -15,8 +16,8 @@ public class EditProjectController extends BaseController implements Initializab
     @FXML public TextField projectManagerTextField;
     @FXML public TextField projectDescriptionTextField;
     @FXML public TextField projectTeamMemberNameTextField;
-    @FXML public TextField projectRiskAndStatusTextField;
-    @FXML public TextField projectRequirementsTextField;
+    @FXML public TextArea projectRiskAndStatusTextArea;
+    @FXML public TextArea projectRequirementsTextArea;
     @FXML public TextField projectCurrentStatusTextField;
     @FXML public TextField projectRequirementsHoursTextField;
     @FXML public TextField projectDesigningHoursTextField;
@@ -33,7 +34,7 @@ public class EditProjectController extends BaseController implements Initializab
     {
         return new SoftwareProject(projectNameTextField.getText(), projectManagerTextField.getText(),
                 projectDescriptionTextField.getText(), projectTeamMemberNameTextField.getText(),
-                projectRiskAndStatusTextField.getText(), projectRequirementsTextField.getText(),
+                projectRiskAndStatusTextArea.getText(), projectRequirementsTextArea.getText(),
                 projectCurrentStatusTextField.getText(), projectRequirementsHoursTextField.getText(),
                 projectDesigningHoursTextField.getText(), projectCodingHoursTextField.getText(),
                 projectTestingHoursTextField.getText(), projectManagementHoursTextField.getText(),
@@ -53,8 +54,8 @@ public class EditProjectController extends BaseController implements Initializab
         projectManagerTextField.setText(softwareProject.projectManager);
         projectDescriptionTextField.setText(softwareProject.projectDescription);
         projectTeamMemberNameTextField.setText(softwareProject.projectTeamMemberNames);
-        projectRiskAndStatusTextField.setText(softwareProject.projectRisk);
-        projectRequirementsTextField.setText(softwareProject.projectRequirements);
+        projectRiskAndStatusTextArea.setText(softwareProject.projectRisk);
+        projectRequirementsTextArea.setText(softwareProject.projectRequirements);
         projectCurrentStatusTextField.setText(softwareProject.projectCurrentStatus);
         projectRequirementsHoursTextField.setText(softwareProject.projectRequirementHours);
         projectDesigningHoursTextField.setText(softwareProject.projectDesignHours);
