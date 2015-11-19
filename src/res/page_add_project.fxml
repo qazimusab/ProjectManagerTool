@@ -1,72 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.AddProjectController">
 
-    <Label alignment="CENTER" prefHeight="42.0" prefWidth="603.0" text="Project View" textAlignment="CENTER">
-        <font>
-            <Font size="24.0" />
-        </font>
-    </Label>
-    <HBox prefHeight="36.0" prefWidth="600.0">
-        <Label alignment="CENTER" contentDisplay="TEXT_ONLY" prefHeight="36.0" prefWidth="230.0" text="Name:" textAlignment="CENTER" />
-        <TextField fx:id="projectNameTextField" prefHeight="36.0" prefWidth="360.0" />
-    </HBox>
-    <HBox prefHeight="36.0" prefWidth="600.0">
-        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="36.0" prefWidth="230.0" text="Project Manager:" textAlignment="CENTER" />
-        <TextField fx:id="projectManagerTextField" alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="360.0" />
-    </HBox>
-    <HBox prefHeight="36.0" prefWidth="600.0">
-        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="36.0" prefWidth="230.0" text="Description:" textAlignment="CENTER"/>
-        <TextField fx:id="projectDescriptionTextField" alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="360.0" />
-    </HBox>
-    <HBox prefHeight="36.0" prefWidth="600.0">
-        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="36.0" prefWidth="230.0" text="Team Member(s) names:" textAlignment="CENTER" />
-        <TextField fx:id="projectTeamMemberNameTextField" alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="360.0" />
-    </HBox>
-    <HBox prefHeight="36" prefWidth="600">
-        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="36" prefWidth="230" text="Risk - Risk Status:" textAlignment="CENTER"/>
-        <TextField fx:id="projectRiskAndStatusTextField" alignment="CENTER_LEFT" prefHeight="36" prefWidth="360"/>
-    </HBox>
-    <HBox prefHeight="36.0" prefWidth="600.0">
-        <Label alignment="CENTER" prefHeight="36.0" prefWidth="230.0" text="Current Status:" textAlignment="CENTER" />
-        <TextField fx:id="projectCurrentStatusTextField" alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="200.0" />
-    </HBox>
-    <HBox prefHeight="36" prefWidth="600">
-        <Label alignment="CENTER" prefHeight="36" prefWidth="230" text="Requirements Analysis Hours:" textAlignment="CENTER"/>
-        <TextField fx:id="projectRequirementsHoursTextField" alignment="CENTER_LEFT" prefHeight="36" prefWidth="70"/>
-    </HBox>
-    <HBox prefHeight="36.0" prefWidth="600.0">
-        <Label alignment="CENTER" prefHeight="56.0" prefWidth="230.0" text="Designing Hours:" textAlignment="CENTER" />
-        <TextField fx:id="projectDesigningHoursTextField" alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="70.0" />
-    </HBox>
-    <HBox prefHeight="36.0" prefWidth="600.0">
-        <Label alignment="CENTER" prefHeight="56.0" prefWidth="230.0" text="Coding Hours:" textAlignment="CENTER" />
-        <TextField fx:id="projectCodingHoursTextField" alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="70.0" />
-    </HBox>
-    <HBox prefHeight="36.0" prefWidth="600.0">
-        <Label alignment="CENTER" prefHeight="56.0" prefWidth="230.0" text="Testing Hours:" textAlignment="CENTER" />
-        <TextField fx:id="projectTestingHoursTextField" alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="70.0" />
-    </HBox>
-    <HBox prefHeight="36.0" prefWidth="600.0">
-        <Label alignment="CENTER" prefHeight="56.0" prefWidth="230.0" text="Management Hours:" textAlignment="CENTER" />
-        <TextField fx:id="projectManagementHoursTextField" alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="70.0" />
-    </HBox>
-    <HBox prefHeight="36.0" prefWidth="600.0">
-        <Label alignment="CENTER" prefHeight="56.0" prefWidth="230.0" text="Start Date:" textAlignment="CENTER" />
-        <TextField fx:id="projectStartDateTextField" alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="100.0" />
-    </HBox>
-    <HBox prefHeight="36.0" prefWidth="600.0">
-        <Label alignment="CENTER" prefHeight="56.0" prefWidth="230.0" text="Expected Date:" textAlignment="CENTER" />
-        <TextField fx:id="projectExpectedDateTextField" alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="100.0" />
-    </HBox>
-    <HBox prefHeight="36.0" prefWidth="600.0">
-        <Label alignment="CENTER" prefHeight="56.0" prefWidth="230.0" text="Actual Date:" textAlignment="CENTER" />
-        <TextField fx:id="projectActualDateTextField" alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="100.0" />
-    </HBox>
-    <HBox alignment="CENTER" prefHeight="56.0" prefWidth="600.0">
-        <Button fx:id="addProjectButton" mnemonicParsing="false" onAction="#addProjectButtonAction" text="Add Project" />
-    </HBox>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="546.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.AddProjectController">
+   <children>
+   
+       <Label alignment="CENTER" prefHeight="42.0" prefWidth="600.0" text="Project View" textAlignment="CENTER">
+           <font>
+               <Font size="24.0" />
+           </font>
+       </Label>
+       <HBox prefHeight="36.0" prefWidth="600.0">
+          <children>
+              <Label alignment="CENTER" contentDisplay="TEXT_ONLY" prefHeight="36.0" prefWidth="230.0" text="Name:" textAlignment="CENTER" />
+              <TextField fx:id="projectNameTextField" prefHeight="36.0" prefWidth="360.0" />
+          </children>
+       </HBox>
+       <HBox prefHeight="36.0" prefWidth="600.0">
+          <children>
+              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="36.0" prefWidth="230.0" text="Project Manager:" textAlignment="CENTER" />
+              <TextField fx:id="projectManagerTextField" alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="360.0" />
+          </children>
+       </HBox>
+       <HBox prefHeight="36.0" prefWidth="600.0">
+          <children>
+              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="36.0" prefWidth="230.0" text="Description:" textAlignment="CENTER" />
+              <TextField fx:id="projectDescriptionTextField" alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="360.0" />
+          </children>
+       </HBox>
+       <HBox prefHeight="36.0" prefWidth="600.0">
+          <children>
+              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="36.0" prefWidth="230.0" text="Team Member(s) names:" textAlignment="CENTER" />
+              <TextField fx:id="projectTeamMemberNameTextField" alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="360.0" />
+          </children>
+       </HBox>
+       <HBox prefHeight="36" prefWidth="600">
+          <children>
+              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="36" prefWidth="230" text="Risk - Risk Status:" textAlignment="CENTER" />
+              <TextField fx:id="projectRiskAndStatusTextField" alignment="CENTER_LEFT" prefHeight="36" prefWidth="360" />
+          </children>
+       </HBox>
+       <HBox prefHeight="36" prefWidth="600">
+           <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="36" prefWidth="230" text="Functional/Non-Functional Requirements" textAlignment="CENTER"/>
+           <TextField fx:id="projectRequirementsTextField" alignment="CENTER_LEFT" prefHeight="36" prefWidth="360"/>
+       </HBox>
+       <HBox prefHeight="36.0" prefWidth="600.0">
+          <children>
+              <Label alignment="CENTER" prefHeight="36.0" prefWidth="230.0" text="Current Status:" textAlignment="CENTER" />
+              <TextField fx:id="projectCurrentStatusTextField" alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="200.0" />
+          </children>
+       </HBox>
+       <HBox prefHeight="36" prefWidth="600">
+          <children>
+              <Label alignment="CENTER" prefHeight="36" prefWidth="230" text="Requirements Analysis Hours:" textAlignment="CENTER" />
+              <TextField fx:id="projectRequirementsHoursTextField" alignment="CENTER_LEFT" prefHeight="36" prefWidth="70" />
+          </children>
+       </HBox>
+       <HBox prefHeight="36.0" prefWidth="600.0">
+          <children>
+              <Label alignment="CENTER" prefHeight="56.0" prefWidth="230.0" text="Designing Hours:" textAlignment="CENTER" />
+              <TextField fx:id="projectDesigningHoursTextField" alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="70.0" />
+          </children>
+       </HBox>
+       <HBox prefHeight="36.0" prefWidth="600.0">
+          <children>
+              <Label alignment="CENTER" prefHeight="56.0" prefWidth="230.0" text="Coding Hours:" textAlignment="CENTER" />
+              <TextField fx:id="projectCodingHoursTextField" alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="70.0" />
+          </children>
+       </HBox>
+       <HBox prefHeight="36.0" prefWidth="600.0">
+          <children>
+              <Label alignment="CENTER" prefHeight="56.0" prefWidth="230.0" text="Testing Hours:" textAlignment="CENTER" />
+              <TextField fx:id="projectTestingHoursTextField" alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="70.0" />
+          </children>
+       </HBox>
+       <HBox prefHeight="36.0" prefWidth="600.0">
+          <children>
+              <Label alignment="CENTER" prefHeight="56.0" prefWidth="230.0" text="Management Hours:" textAlignment="CENTER" />
+              <TextField fx:id="projectManagementHoursTextField" alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="70.0" />
+          </children>
+       </HBox>
+       <HBox prefHeight="36.0" prefWidth="600.0">
+          <children>
+              <Label alignment="CENTER" prefHeight="56.0" prefWidth="230.0" text="Start Date:" textAlignment="CENTER" />
+              <TextField fx:id="projectStartDateTextField" alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="100.0" />
+          </children>
+       </HBox>
+       <HBox prefHeight="36.0" prefWidth="600.0">
+          <children>
+              <Label alignment="CENTER" prefHeight="56.0" prefWidth="230.0" text="Expected Date:" textAlignment="CENTER" />
+              <TextField fx:id="projectExpectedDateTextField" alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="100.0" />
+          </children>
+       </HBox>
+       <HBox prefHeight="36.0" prefWidth="600.0">
+          <children>
+              <Label alignment="CENTER" prefHeight="56.0" prefWidth="230.0" text="Actual Date:" textAlignment="CENTER" />
+              <TextField fx:id="projectActualDateTextField" alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="100.0" />
+          </children>
+       </HBox>
+       <HBox alignment="CENTER" prefHeight="56.0" prefWidth="600.0">
+          <children>
+              <Button fx:id="addProjectButton" mnemonicParsing="false" onAction="#addProjectButtonAction" text="Add Project" />
+          </children>
+       </HBox>
+   </children>
 </VBox>

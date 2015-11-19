@@ -7,6 +7,7 @@ public class SoftwareProject
     public String projectDescription;
     public String projectTeamMemberNames;
     public String projectRisk;
+    public String projectRequirements;
     public String projectCurrentStatus;
     public String projectRequirementHours;
     public String projectDesignHours;
@@ -24,7 +25,7 @@ public class SoftwareProject
 
     public SoftwareProject(String projectName, String projectManager,
                            String projectDescription, String projectTeamMemberNames,
-                           String projectRisk, String projectCurrentStatus,
+                           String projectRisk, String projectRequirements, String projectCurrentStatus,
                            String projectRequirementHours,String projectDesignHours,
                            String projectCodingHours, String projectTestingHours,
                            String projectManagementHours, String startDate,
@@ -34,6 +35,7 @@ public class SoftwareProject
         this.projectDescription = projectDescription;
         this.projectTeamMemberNames = projectTeamMemberNames;
         this.projectRisk = projectRisk;
+        this.projectRequirements = projectRequirements;
         this.projectCurrentStatus = projectCurrentStatus;
         this.projectRequirementHours = projectRequirementHours;
         this.projectDesignHours = projectDesignHours;
@@ -58,6 +60,8 @@ public class SoftwareProject
                 .append(projectTeamMemberNames == null ? "" : "projectTeamMemberNames" + projectTeamMemberNames)
                 .append("@")
                 .append(projectRisk == null ? "" : "projectRisk" + projectRisk)
+                .append("@")
+                .append(projectRequirements == null ? "" : "projectRequirements" + projectRequirements)
                 .append("@")
                 .append(projectCurrentStatus == null ? "" : "projectCurrentStatus" + projectCurrentStatus)
                 .append("@")
@@ -85,6 +89,7 @@ public class SoftwareProject
     void setProjectDescription(String description){this.projectDescription = description;}
     void setProjectTeamMemberNames(String projectTeamMemberNames){this.projectTeamMemberNames = projectTeamMemberNames;}
     void setProjectRisk(String risk){this.projectRisk = risk;}
+    void setProjectRequirements(String requirements){this.projectRequirements = requirements;}
     void setProjectCurrentStatus(String projectCurrentStatus){this.projectCurrentStatus = projectCurrentStatus;}
     void setProjectRequirementHours(String hours){this.projectRequirementHours = hours;}
     void setProjectDesignHours(String hours){this.projectDesignHours = hours;}
@@ -100,6 +105,7 @@ public class SoftwareProject
     public String getProjectDescription(){return projectDescription;}
     public String getProjectTeamMemberNames(){return projectTeamMemberNames;}
     public String getProjectRisk(){return projectRisk;}
+    public String getProjectRequirements(){return  projectRequirements;}
     public String getProjectCurrentStatus(){return projectCurrentStatus;}
     public String getProjectRequirementHours(){return projectRequirementHours;}
     public String getProjectDesignHours(){return projectDesignHours;}
@@ -109,5 +115,4 @@ public class SoftwareProject
     public String getStartDate(){return startDate;}
     public String getExpectedDate(){return expectedDate;}
     public String getActualDate(){return actualDate;}
-
 }

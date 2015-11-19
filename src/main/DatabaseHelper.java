@@ -75,6 +75,9 @@ public class DatabaseHelper {
                     if (projectDetails[j].contains("projectRisk")) {
                         softwareProject.setProjectRisk(projectDetails[j].substring(11));
                     }
+                    if (projectDetails[j].contains("projectRequirements")) {
+                        softwareProject.setProjectRequirements(projectDetails[j].substring(19));
+                    }
                     if (projectDetails[j].contains("projectCurrentStatus")) {
                         softwareProject.setProjectCurrentStatus(projectDetails[j].substring(20));
                     }
