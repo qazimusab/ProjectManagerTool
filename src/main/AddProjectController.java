@@ -46,23 +46,6 @@ public class AddProjectController extends BaseController implements Initializabl
         databaseHelper.saveOrUpdateSoftwareProject(createSoftwareProjectFromFields());
         changeScene("../res/page_home.fxml",addProjectButton);
     }
-
-    public void populateWithProject(SoftwareProject softwareProject){
-        projectNameTextField.setText(softwareProject.projectName);
-        projectManagerTextField.setText(softwareProject.projectManager);
-        projectTeamMemberNameTextField.setText(softwareProject.projectTeamMemberNames);
-        projectRiskAndStatusTextArea.setText(softwareProject.projectRisk);
-        projectRequirementsTextArea.setText(softwareProject.projectRequirements);
-        projectCurrentStatusTextField.setText(softwareProject.projectCurrentStatus);
-        projectRequirementsHoursTextField.setText(softwareProject.projectRequirementHours);
-        projectDesigningHoursTextField.setText(softwareProject.projectDesignHours);
-        projectCodingHoursTextField.setText(softwareProject.projectCodingHours);
-        projectTestingHoursTextField.setText(softwareProject.projectTestingHours);
-        projectManagementHoursTextField.setText(softwareProject.projectManagementHours);
-        projectStartDateTextField.setText(softwareProject.startDate);
-        projectExpectedDateTextField.setText(softwareProject.expectedDate);
-        projectActualDateTextField.setText(softwareProject.actualDate);
-    }
 }
 
 

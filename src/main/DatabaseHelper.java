@@ -10,7 +10,6 @@ public class DatabaseHelper {
 
     private ArrayList<SoftwareProject> allSoftwareProjects;
 
-    @SuppressWarnings("unused")
     public SoftwareProject getSoftwareProject(String softwareProjectName) throws IOException {
         File database = new File("database.txt");
         if(!database.exists()) {
