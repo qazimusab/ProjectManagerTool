@@ -31,7 +31,7 @@
             <TextArea fx:id="projectRiskAndStatusTextArea" wrapText="true" prefHeight="120" prefWidth="360" />
     </HBox>
     <HBox prefHeight="120" prefWidth="600">
-        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="36" prefWidth="230" text="Functional/Non-Functional Requirements" textAlignment="CENTER"/>
+        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="36" prefWidth="230" text="Functional/Non-Functional&#10;Requirements" textAlignment="CENTER"/>
         <TextArea fx:id="projectRequirementsTextArea" wrapText="true" prefHeight="120" prefWidth="360"/>
     </HBox>
     <HBox prefHeight="36.0" prefWidth="600.0">
