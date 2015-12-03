@@ -27,7 +27,7 @@
         <TextField fx:id="projectTeamMemberNameTextField" alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="360.0" />
     </HBox>
     <HBox prefHeight="120" prefWidth="600">
-            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="36" prefWidth="230" text="Risk - Risk Status:" textAlignment="CENTER" />
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="40" prefWidth="230" text="Risk - Risk Status:" textAlignment="CENTER" />
             <TextArea fx:id="projectRiskAndStatusTextArea" wrapText="true" prefHeight="120" prefWidth="360" />
     </HBox>
     <HBox prefHeight="120" prefWidth="600">
