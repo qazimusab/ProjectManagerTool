@@ -3,9 +3,7 @@ package main;
 import java.io.*;
 import java.util.ArrayList;
 
-/**
- * Created by Qazi Ahmed on 11/10/15.
- */
+
 public class DatabaseHelper {
 
     private ArrayList<SoftwareProject> allSoftwareProjects;
